@@ -1,0 +1,145 @@
+<!--
+Kush Patel
+Project1
+CMSC 437
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snow Pilot</title>
+	<style>
+		body
+		{
+			font-family: gothic century;
+			background-image: url(images/star_wars_battlefront_twilight_company-1920x1200.jpg);
+			margin: 0;
+		}
+
+		canvas
+		{
+			position: absolute;
+			top: 50px;
+			left: 600px;
+			background: transparent;
+		}
+		
+		#innerRim
+		{
+			z-index: -1;
+		}
+		
+		.instructs
+		{
+		   padding-left: 0em;
+		}
+		
+		.plane
+		{
+		   padding-top: 0em;
+		}
+		
+		#outerRim
+		{
+			z-index: -2;
+		}
+		
+		#myRim
+		{
+			z-index: 0;
+		}
+		
+		.restart
+		{
+			position: absolute;
+			top: 250px;
+			left: 830px;
+			color: orange;
+			font-family: gothic century;
+			font-size: 80px;
+			cursor: default;
+			display: none;
+		}
+		
+		.restart span
+		{
+			font-size: 50px;
+			cursor: pointer;
+			position: absolute;
+			left: 30px;
+		}
+		
+		.restart span:hover
+		{
+			color: orange;
+		}
+		
+		.controls
+		{
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 1em;
+		}
+
+		.controlplane
+		{
+		   text-align: left;
+		   max-width: 30em;
+		   white-space: normal;
+		   background-color: teal;
+		   color: white;
+		   line-height: 1em;
+		   padding: 1em;
+		   margin-top: 1em;
+		}
+		
+		.preping
+		{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			font-family: gothic century;
+			font-size: 0px;
+			cursor: default;
+		}
+		
+		.points
+		{
+			position: absolute;
+			top: 50px;
+			left: 600px;
+			color: orange;
+			font-family: gothic century;
+			cursor: default;
+		}
+	</style>
+	</head>
+	
+	<body>
+		<audio autoplay loop>
+			<source src= "audio/John%20Williams%20-%20Star%20Wars%20Battle%20Theme.mp3" type="audio/mpeg"/>
+		</audio>
+		<div class="controls">
+            <div class="controlplane">
+               <div><b>Snow Pilot by Kush Patel</b></div>
+               <div class="instructs">
+                  <div><b>Instructions:</b></div>
+                  <p class="plane">Use W, A, S and D to move!</p>
+                  <p>Hit Space to fire your lasers!</p>
+                  <p>Destroy as many Star Killers as you can to get the highest possible score!</p>
+				  <p>Click 'Again' to Restart the Game!</p>
+               </div>
+            </div>
+		</div>
+
+		<canvas id="outerRim" width="700" height="700"></canvas>
+		<div class="points">SCORE: <span id="points"></span></div>
+		<canvas id="innerRim" width="700" height="700"></canvas>
+		<div class="preping" id="preping"></div>
+		<canvas id="myRim" width="700" height="700"></canvas>
+		<div class="restart" id="restart">Loser!
+			<p><span onclick="game.restart();">Again?</span></p>
+		</div>
+		<script src="myBoard.js"></script>
+	</body>
+</html>
